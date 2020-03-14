@@ -3157,8 +3157,7 @@ input, select, textarea {
 
 				.spotlights > section > .image {
 					width: 100%;
-					height: 50em;
-					min-height: 15em;
+					height: 50vh;
 				}
 
 				.spotlights > section > .content {
@@ -3178,7 +3177,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			.spotlights > section > .image {
-				height: 50em;
+				height: 50vh;
 				min-height: 15em;
 			}
 
@@ -4044,7 +4043,7 @@ input, select, textarea {
   margin: auto;
   display: block;
   width: 80%;
-  max-width: 15em;
+  max-width: 700px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
