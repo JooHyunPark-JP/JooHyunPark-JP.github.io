@@ -2832,6 +2832,29 @@ input, select, textarea {
 	margin-left: 2.5em;
 }
 
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 460px){
+
+	.contactInformation
+	{
+		margin-left: 0em;
+	}
+}
+
+@media only screen and (max-width: 380px){
+
+	.contactSocial{
+		margin-left: 1em;
+	}
+}
+
+@media only screen and (max-width: 320px){
+
+	.contactSocial{
+		margin-left: 0em;
+	}
+}
+
 
 
 	ul.contact {
