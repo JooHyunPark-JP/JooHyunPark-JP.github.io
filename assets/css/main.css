@@ -4138,15 +4138,6 @@ max-height: 27em
 }
 
 
-
-p.pmargin:after {
-	background: rgba(144, 144, 144, 1);
-	content: '';
-	display: inline-block;
-	height: 2px;
-	width: 50em;
-}
-
 .headermargin{
 	margin-top: 1.5em;
 }
