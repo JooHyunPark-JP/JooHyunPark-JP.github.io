@@ -4005,8 +4005,8 @@ max-height: 27em
 
 .responsiveImage {
 	width: 100%;
-	max-width: 30em;
-	max-height: 30em;
+	max-width: 40em;
+	max-height: 25em;
  height: 100%;
  border-radius: 1em;
 }
