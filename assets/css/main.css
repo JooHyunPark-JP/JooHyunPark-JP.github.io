@@ -2829,6 +2829,11 @@ max-height: 27em
 
 /* Contact */
 
+.textCenter
+{
+	text-align: center;
+}
+
 .contactrow > *{
 	display : inline-block;
 	vertical-align:top;
