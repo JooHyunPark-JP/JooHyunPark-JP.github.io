@@ -4125,6 +4125,14 @@ max-height: 27em
 
 #myImg2:hover {opacity: 0.7;}
 
+#myImg3 {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#myImg3:hover {opacity: 0.7;}
+
+
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
