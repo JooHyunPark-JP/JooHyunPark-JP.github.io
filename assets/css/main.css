@@ -4217,3 +4217,7 @@ max-height: 27em
 	text-align: left;
 
 }
+
+.hiddenForLink{
+	display: none;
+}
