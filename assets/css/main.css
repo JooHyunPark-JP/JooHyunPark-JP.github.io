@@ -1837,6 +1837,7 @@ input, select, textarea {
 
 /* Button */
 
+
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
@@ -1996,6 +1997,7 @@ input, select, textarea {
 				}
 
 				/* Features */
+				
 
 					.features {
 						display: -moz-flex;
