@@ -1,0 +1,127 @@
+
+/* Carousel overrides (scoped) */
+.carousel-box{ --bs-aspect-ratio:100% !important; } /* fallback */
+#portfolioCarousel-1 .carousel-item img{
+  width:100%; height:100%;
+  object-fit:contain !important;
+  object-position:center;
+  background:#000;
+}
+
+/* Keep previous controls/indicators styling consistent */
+:root{
+  --cc-arrow-color:#111111;
+  --cc-indicator:rgba(0,0,0,.45);
+  --cc-indicator-active:#111111;
+  --cc-icon-bg:rgba(255,255,255,0);
+  --cc-icon-size:5rem;
+}
+#portfolioCarousel-1 .carousel-control-prev-icon,
+#portfolioCarousel-1 .carousel-control-next-icon{
+  width:var(--cc-icon-size); height:var(--cc-icon-size);
+  border-radius:50%; background-color:var(--cc-icon-bg);
+  background-size:60% 60%; background-position:center; background-repeat:no-repeat;
+}
+#portfolioCarousel-1 .carousel-control-prev-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23111111'%3E%3Cpath d='M11.354 1.646a.5.5 0 010 .708L6.707 7l4.647 4.646a.5.5 0 01-.708.708l-5-5a.5.5 0 010-.708l5-5a.5.5 0 01.708 0z'/%3E%3C/svg%3E");
+}
+#portfolioCarousel-1 .carousel-control-next-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23111111'%3E%3Cpath d='M4.646 1.646a.5.5 0 000 .708L9.293 7l-4.647 4.646a.5.5 0 10.708.708l5-5a.5.5 0 000-.708l-5-5a.5.5 0 00-.708 0z'/%3E%3C/svg%3E");
+}
+
+
+#portfolioCarousel-1 .carousel-control-prev, #portfolioCarousel-1 .carousel-control-next{ filter:drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+
+
+/* Keep ratio square by default */
+.carousel-box{ --bs-aspect-ratio: 100% !important; }
+
+/* Ensure full height on the carousel layers */
+#portfolioCarousel-1, #portfolioCarousel-1 .carousel-inner, #portfolioCarousel-1 .carousel-item { height: 100%; }
+
+/* Controls/indicators styling */
+:root{
+  --cc-arrow-color:#111111;
+  --cc-indicator:rgba(0,0,0,.45);
+  --cc-indicator-active:#111111;
+  --cc-icon-bg:rgba(255,255,255,0);
+  --cc-icon-size:5rem;
+}
+#portfolioCarousel-1 .carousel-control-prev-icon,
+#portfolioCarousel-1 .carousel-control-next-icon{
+  width:var(--cc-icon-size); height:var(--cc-icon-size);
+  border-radius:50%; background-color:var(--cc-icon-bg);
+  background-size:60% 60%; background-position:center; background-repeat:no-repeat;
+}
+#portfolioCarousel-1 .carousel-control-prev-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23111111'%3E%3Cpath d='M11.354 1.646a.5.5 0 010 .708L6.707 7l4.647 4.646a.5.5 0 01-.708.708l-5-5a.5.5 0 010-.708l5-5a.5.5 0 01.708 0z'/%3E%3C/svg%3E");
+}
+#portfolioCarousel-1 .carousel-control-next-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23111111'%3E%3Cpath d='M4.646 1.646a.5.5 0 000 .708L9.293 7l-4.647 4.646a.5.5 0 10.708.708l5-5a.5.5 0 000-.708l-5-5a.5.5 0 00-.708 0z'/%3E%3C/svg%3E");
+}
+
+
+#portfolioCarousel-1 .carousel-control-prev, #portfolioCarousel-1 .carousel-control-next{ filter:drop-shadow(0 2px 6px rgba(0,0,0,.35)); }
+
+
+/* Modal 2 carousel (HealthFusion) */
+#portfolioCarousel-healthfusion, #portfolioCarousel-healthfusion .carousel-inner, #portfolioCarousel-healthfusion .carousel-item { height: 100%; }
+#portfolioCarousel-healthfusion .carousel-control-prev-icon,
+#portfolioCarousel-healthfusion .carousel-control-next-icon{
+  width:5rem; height:5rem;
+  border-radius:50%; background-color:transparent;
+  background-size:60% 60%; background-position:center; background-repeat:no-repeat;
+}
+#portfolioCarousel-healthfusion .carousel-control-prev-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23111111'%3E%3Cpath d='M11.354 1.646a.5.5 0 010 .708L6.707 7l4.647 4.646a.5.5 0 01-.708.708l-5-5a.5.5 0 010-.708l5-5a.5.5 0 01.708 0z'/%3E%3C/svg%3E");
+}
+#portfolioCarousel-healthfusion .carousel-control-next-icon{
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23111111'%3E%3Cpath d='M4.646 1.646a.5.5 0 000 .708L9.293 7l-4.647 4.646a.5.5 0 10.708.708l5-5a.5.5 0 000-.708l-5-5a.5.5 0 00-.708 0z'/%3E%3C/svg%3E");
+}
+
+
+
+/* Force indicator visibility for Modal 2 carousel */
+#portfolioCarousel-healthfusion .carousel-indicators{
+  position:absolute;
+  left:0; right:0;
+  bottom: .5rem;
+  z-index: 10;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: .5rem;
+}
+
+
+
+
+/* Ensure indicators visible in both modals */
+#portfolioCarousel-1 .carousel-indicators,
+#portfolioCarousel-healthfusion .carousel-indicators{
+  position:absolute; left:0; right:0; bottom:.5rem; z-index:10;
+  display:flex; justify-content:center; gap:.5rem;
+}
+
+/* === Indicator contrast upgrade (both modals) === */
+#portfolioCarousel-1 .carousel-indicators [data-bs-target],
+#portfolioCarousel-healthfusion .carousel-indicators [data-bs-target]{
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,.85) !important; /* light dot */
+  opacity: 1 !important;
+  border: 1px solid rgba(0,0,0,.25);                  /* thin outline */
+  box-shadow: 0 0 0 2px rgba(0,0,0,.35);              /* halo for busy backgrounds */
+}
+#portfolioCarousel-1 .carousel-indicators .active,
+#portfolioCarousel-healthfusion .carousel-indicators .active{
+  background-color: #ffffff !important;
+  border-color: rgba(0,0,0,.4);
+  box-shadow: 0 0 0 2px rgba(0,0,0,.5);
+}
+#portfolioCarousel-1 .carousel-indicators [data-bs-target]:focus-visible,
+#portfolioCarousel-healthfusion .carousel-indicators [data-bs-target]:focus-visible{
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}

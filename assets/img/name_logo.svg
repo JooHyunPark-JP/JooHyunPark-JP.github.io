@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 40" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Joo Hyun Park</title>
+  <style>
+    .wordmark {
+      font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-weight: 700;
+      letter-spacing: 4px;
+      fill: #5de8e3;
+    }
+  </style>
+  <text x="0" y="27" class="wordmark">JOO HYUN PARK</text>
+</svg>

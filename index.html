@@ -1,409 +1,907 @@
-<!DOCTYPE HTML>
-<!--
-Hyperspace by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-<head>
-	<title>Portfolio - Joo Hyun Park</title>
-	<link rel="shortcut icon" href="images/logo2.png" />
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="" name="description"/>
+  <meta content="" name="author"/>
+  <title>
+   Portfolio - Joo Hyun Park
+  </title>
+  <link href="assets/logo2.png" rel="icon" type="image/x-icon"/>
+  <!-- Font Awesome icons (free version)-->
+  <script crossorigin="anonymous" src="https://use.fontawesome.com/releases/v6.3.0/js/all.js">
+  </script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"/>
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet"/>
+  <link href="css/miniport-hero.css" rel="stylesheet"/>
+  <link href="css/carousel-custom.css" rel="stylesheet"/>
+ </head>
+ <body id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+   <div class="container">
+    <a class="navbar-brand" href="#page-top">
+     <img alt="..." src="assets/img/name_logo2.svg"/>
+    </a>
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbarResponsive" data-bs-toggle="collapse" type="button">
+     Menu
+     <i class="fas fa-bars ms-1">
+     </i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+      <li class="nav-item">
+       <a class="nav-link" href="#miniport-hero">
+        Main
+       </a>
+      </li>
+      <li class="nav-item">
+       <a class="nav-link" href="#about">
+        About
+       </a>
+      </li>
+      <li class="nav-item">
+	         <a class="nav-link" href="#portfolio">
+        Projects
+       </a>
+	   <li class="nav-item"><a class="nav-link" href="#contact">Get in Touch</a></li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+  <!-- Masthead-->
+  <!-- Miniport Hero injected -->
+  <div id="miniport-hero">
+   <article class="wrapper style1" id="top">
+    <div class="container">
+     <div class="row">
+      <div class="col-4 col-5-large col-12-medium">
+       <span class="image fit">
+        <img alt="" src="assets/img/hero/portrait3.jpg"/>
+       </span>
+      </div>
+      <div class="col-8 col-7-large col-12-medium">
+       <header>
+        <h1>
+         Hi. I'm
+         <strong>
+          Joo Hyun Park
+         </strong>
+         .
+        </h1>
+       </header>
+       <p>
+        I'm an
+        <strong>
+         Android / Mobile Developer
+        </strong>
+        focused on building reliable Kotlin apps with modern Android tools.
+       </p>
+       <p>
+        I care about clean architecture, readable code, and shipping features that stay stable in real-world conditions.
+       </p>
+       <!-- <a href="#work" class="button large scrolly">Learn about what I do</a> -->
+      </div>
+     </div>
+    </div>
+   </article>
+  </div>
+  <!-- /Miniport Hero -->
+  <div aria-hidden="true" class="section-gradient-divider" role="presentation">
+  </div>
+  <section class="page-section" id="about">
+   <div class="container">
+    <div class="text-center">
+     <h2 class="section-heading text-uppercase">
+      About me
+     </h2>
+     <h3 class="section-subheading text-muted">
+      Android / Mobile Developer with a real focus on reliability and clear architecture.
+     </h3>
+    </div>
+    <div class="row text-center">
+     <!-- Column 1: Android in production -->
+     <div class="col-md-4">
+      <span class="fa-stack fa-3x">
+       <i class="fas fa-circle fa-stack-2x text-primary">
+       </i>
+       <i class="fas fa-mobile-alt fa-stack-1x fa-inverse">
+       </i>
+      </span>
+      <h4 class="my-3">
+       Android in practice
+      </h4>
+      <p class="text-muted">
+       Year of production Android experience using Kotlin, Jetpack Compose, MVVM, Hilt, Room, and Coroutines/Flow.
+                    I care less about buzzwords and more about apps that don&rsquo;t break.
+      </p>
+     </div>
+     <!-- Column 2: How I build -->
+     <div class="col-md-4">
+      <span class="fa-stack fa-3x">
+       <i class="fas fa-circle fa-stack-2x text-primary">
+       </i>
+       <i class="fas fa-sitemap fa-stack-1x fa-inverse">
+       </i>
+      </span>
+      <h4 class="my-3">
+       How I build
+      </h4>
+      <p class="text-muted">
+       Clear boundaries, testable ViewModels, and attention to edge cases
+                    (background limits, offline, weird states). I use AI as a helper,
+                    but I only ship code I can explain.
+      </p>
+     </div>
+     <!-- Column 3: Links -->
+     <div class="col-md-4">
+      <span class="fa-stack fa-3x">
+       <i class="fas fa-circle fa-stack-2x text-primary">
+       </i>
+       <i class="fas fa-link fa-stack-1x fa-inverse">
+       </i>
+      </span>
+      <h4 class="my-3">
+       Connect
+      </h4>
+      <p class="text-muted">
+       <ul class="icons">
+        <li>
+         GitHub:
+         <a class="icon" href="https://github.com/JooHyunPark-JP" rel="noopener" target="_blank">
+          <i aria-hidden="true" class="fa-brands fa-github">
+          </i>
+          <span class="sr-only">
+           GitHub
+          </span>
+         </a>
+        </li>
+        <li>
+         LinkedIn:
+         <a class="icon" href="https://www.linkedin.com/in/joo-hyun-park/" rel="noopener" target="_blank">
+          <i aria-hidden="true" class="fa-brands fa-linkedin-in">
+          </i>
+          <span class="sr-only">
+           LinkedIn
+          </span>
+         </a>
+        </li>
+       </ul>
+      </p>
+     </div>
+    </div>
+   </div>
+  </section>
+  
+  <!-- Portfolio Grid-->
+  <section class="page-section bg-light" id="portfolio">
+   <div class="container">
+    <div class="text-center">
+     <h2 class="section-heading text-uppercase">
+      Projects
+     </h2>
+     <h3 class="section-subheading text-muted">
+      Selected Android projects and small experiments that reflect how I build. 
+     </h3>
+    </div>
+    <div class="row">
+     <div class="col-lg-4 col-sm-6 mb-4">
+      <!-- Portfolio item 1-->
+      <div class="portfolio-item">
+       <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+        <div class="portfolio-hover">
+         <div class="portfolio-hover-content">
+          <i class="fas fa-plus fa-3x">
+          </i>
+         </div>
+        </div>
+        <div class="ratio ratio-4x3" style="--bs-aspect-ratio: 120%">
+         <img alt="..." class="w-100 h-100 object-fit-cover" src="assets/img/portfolio/nearbynote_img/nearbynote_mapview.jpg"/>
+        </div>
+       </a>
+       <div class="portfolio-caption">
+        <div class="portfolio-caption-heading">
+         NearByNote - Kotlin
+        </div>
+        <div class="portfolio-caption-subheading text-muted">
+         Modern location-based reminder app
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-sm-6 mb-4">
+      <!-- Portfolio item 2-->
+      <div class="portfolio-item">
+       <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+        <div class="portfolio-hover">
+         <div class="portfolio-hover-content">
+          <i class="fas fa-plus fa-3x">
+          </i>
+         </div>
+        </div>
+        <div class="ratio ratio-4x3" style="--bs-aspect-ratio: 120%">
+         <img alt="..." class="w-100 h-100 object-fit-cover" src="assets/img/portfolio/healthFusion_img/HealthFusion_calander.png"/>
+        </div>
+       </a>
+       <div class="portfolio-caption">
+        <div class="portfolio-caption-heading">
+         HealthFusion
+        </div>
+        <div class="portfolio-caption-subheading text-muted">
+         A health management app
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-sm-6 mb-4">
+      <!-- Portfolio item 3-->
+      <div class="portfolio-item">
+       <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+        <div class="portfolio-hover">
+         <div class="portfolio-hover-content">
+          <i class="fas fa-plus fa-3x">
+          </i>
+         </div>
+        </div>
+        <div class="ratio ratio-4x3" style="--bs-aspect-ratio: 120%">
+         <img alt="..." class="w-100 h-100 object-fit-cover" src="assets/img/portfolio/EarthQuakeGuardian.gif"/>
+        </div>
+       </a>
+       <div class="portfolio-caption">
+        <div class="portfolio-caption-heading">
+         EarthQuake Guardian
+        </div>
+        <div class="portfolio-caption-subheading text-muted">
+         <h3>
+          <i class="fas fa-trophy">
+          </i>
+          Nominated Top 5 for Recognition of Distinction for Real-World Applications in the Applied Computing Capstone Showcase
+         </h3>
+        </div>
+        <img alt="Nominated on Capstone Showcase" id="myImg2" src="assets/img/portfolio/capstoneShowcase.jpg" style="width:100%;max-width:8em"/>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+      <!-- Portfolio item 4-->
+      <div class="portfolio-item">
+       <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+        <div class="portfolio-hover">
+         <div class="portfolio-hover-content">
+          <i class="fas fa-plus fa-3x">
+          </i>
+         </div>
+        </div>
+        <div class="ratio ratio-4x3" style="--bs-aspect-ratio: 120%">
+         <img alt="..." class="w-100 h-100 object-fit-cover" src="assets/img/portfolio/currency_converter_img/currencyMain.png"/>
+        </div>
+       </a>
+       <div class="portfolio-caption">
+        <div class="portfolio-caption-heading">
+         CurrencyConverter
+        </div>
+        <div class="portfolio-caption-subheading text-muted">
+         Small Kotlin app to practice testable architecture, unit testing, and GitHub Actions CI.
+        </div>
+       </div>
+      </div>
+     </div>
+     </div>
+    </div>
+   </div>
+  </section>
+          <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Get in touch</h2>
+                    <h3 class="section-subheading text-muted">Feel free to send a message to me! </br> pjh0629@gmail.com</h3>
+                </div>
+				
+            </div>
+        </section>
+		
+		        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-start">Copyright &copy; Joo Hyun Park | Design: Initial Design by HTML5 UP and Start Bootstrap</div>
+                </div>
+            </div>
+        </footer>
+  <!-- Portfolio item 1 modal popup-->
+  <!-- Portfolio Modal 1 - NearbyNote -->
+  <div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="close-modal" data-bs-dismiss="modal">
+      <img alt="Close modal" src="assets/img/close-icon.svg"/>
+     </div>
+     <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-lg-8">
+        <div class="modal-body">
+         <!-- Project details-->
+         <h2 class="text-uppercase">
+          NearbyNote
+         </h2>
+         <p class="item-intro text-muted">
+          Location-based reminder app built with Kotlin and modern Android tools,
+                focused on stable alerts in real-world conditions.
+         </p>
+         <div class="ratio ratio-4x3 mb-4 carousel-box" style="--bs-aspect-ratio: 100%;">
+          <div class="carousel slide w-100 h-100" data-bs-ride="carousel" id="portfolioCarousel-1">
+           <div class="carousel-indicators">
+            <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#portfolioCarousel-1" type="button">
+            </button>
+            <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#portfolioCarousel-1" type="button">
+            </button>
+            <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#portfolioCarousel-1" type="button">
+            </button>
+            <button aria-label="Slide 4" data-bs-slide-to="3" data-bs-target="#portfolioCarousel-1" type="button">
+            </button>
+            <button aria-label="Slide 5" data-bs-slide-to="4" data-bs-target="#portfolioCarousel-1" type="button">
+            </button>
+            <button aria-label="Slide 6" data-bs-slide-to="5" data-bs-target="#portfolioCarousel-1" type="button">
+            </button>
+            <button aria-label="Slide 7" data-bs-slide-to="6" data-bs-target="#portfolioCarousel-1" type="button">
+            </button>
+           </div>
+           <div class="carousel-inner w-100 h-100">
+            <div class="carousel-item active h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="1" class="d-block" src="assets/img/portfolio/nearbynote_img/nearbynote_mapview.jpg" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="2" class="d-block" src="assets/img/portfolio/nearbynote_img/nearbynote_notelist.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="3" class="d-block" src="assets/img/portfolio/nearbynote_img/nearbynote_writenote.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="4" class="d-block" src="assets/img/portfolio/nearbynote_img/nearbynote_setlocation.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="5" class="d-block" src="assets/img/portfolio/nearbynote_img/nearbynote_readnoteonmap.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="6" class="d-block" src="assets/img/portfolio/nearbynote_img/nearbynote_googlespeech.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="capstoneShowcase" class="d-block" src="assets/img/portfolio/nearbynote_img/nearbynote_favouriteaddress.jpg" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+           </div>
+           <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#portfolioCarousel-1" type="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon">
+            </span>
+            <span class="visually-hidden">
+             Previous
+            </span>
+           </button>
+           <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#portfolioCarousel-1" type="button">
+            <span aria-hidden="true" class="carousel-control-next-icon">
+            </span>
+            <span class="visually-hidden">
+             Next
+            </span>
+           </button>
+          </div>
+         </div>
+         <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#portfolioCarousel-1" type="button">
+          <span aria-hidden="true" class="carousel-control-prev-icon">
+          </span>
+          <span class="visually-hidden">
+           Previous
+          </span>
+         </button>
+         <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#portfolioCarousel-1" type="button">
+          <span aria-hidden="true" class="carousel-control-next-icon">
+          </span>
+          <span class="visually-hidden">
+           Next
+          </span>
+         </button>
+        </div>
+       </div>
+            <div class="nearbynote-text text-start">
+<p>
+  NearbyNote is a location-based reminder app that lets people pin notes to real-world places and get notified when they enter the area.
+  Users can create notes from a Mapbox-powered map or by searching for an address, choose a radius for the reminder, and then view their notes either on the map or in a list.
+  The app also supports favorite places (like home or work) for quick reuse and voice input for creating notes hands-free.
+</p>
+<ul class="list-unstyled text-start mb-3">
+  <li class="mb-2">
+    <strong class="fw-bold d-block">Tech stack</strong>
+    <code>Kotlin</code>, <code>Jetpack Compose</code>, <code>MVVM</code>, <code>Hilt</code>, <code>Room</code>, <code>Coroutines</code>/<code>Flow</code>, <code>Mapbox Maps SDK (v11)</code>, <code>Mapbox Geocoding API</code>, <code>Google Play Services Location (Geofencing)</code>, <code>Android SpeechRecognizer</code>, <code>Ktor</code> + <code>kotlinx.serialization</code>, <code>GitHub Actions</code>
+  </li>
+  <li class="mb-2">
+    <strong class="fw-bold d-block">Architecture</strong>
+    <ul class="mb-0 ps-3">
+      <li>
+        <strong>MVVM with Hilt-injected repositories:</strong>
+        Each screen has a <code>ViewModel</code> that exposes UI state as Compose state/<code>Flow</code>s and delegates data work to repositories instead of touching <code>Room</code> or <code>Mapbox</code> directly.
+      </li>
+      <li>
+        <strong>Testable interfaces:</strong>
+        Interfaces like <code>GeofenceRepository</code> and <code>MapboxRepository</code>, plus fakes in the test package, let me unit-test geofence and Mapbox logic without real Android services or network calls.
+      </li>
+      <li>
+        <strong>Navigation using NavGraphs:</strong>
+        A single <code>NavHost</code> with a bottom navigation bar routes between note list, map, read/write note, and saved-address screens, using typed arguments (e.g., <code>noteId: Long?</code>) instead of manual intent extras.
+      </li>
+      <li>
+        <strong>Room as a single source of truth:</strong>
+        One <code>Room</code> database storing notes, geofences, and saved addresses; DAOs expose <code>Flow</code>s that feed into <code>ViewModel</code>s and also power background workers, so geofence state can be rebuilt after reboots or app updates.
+      </li>
+    </ul>
+  </li>
+  <li class="mb-2">
+    <strong class="fw-bold d-block">Reliability</strong>
+    <ul class="mb-0 ps-3">
+      <li>
+        <strong>Room-backed geofence state:</strong>
+        Geofences are stored in <code>Room</code> instead of only in memory, so the app can always recover the full set of active geofences from the database.
+      </li>
+      <li>
+        <strong>Background reconcile worker:</strong>
+        A geofence reconcile worker, triggered by boot and package-replaced broadcast receivers, re-registers geofences after device reboots or app/Play Services updates without relying on a foreground service.
+      </li>
+      <li>
+        <strong>Notification sync:</strong>
+        Notifications are driven from the same database state and can be cancelled via a dedicated receiver, which helps prevent “ghost” reminders when geofences are edited or removed.
+      </li>
+      <li>
+        <strong>Permission handling:</strong>
+        Location permissions, including background access, are requested only when needed with clear in-app explanations and a linked privacy policy, so users understand why location is used and how their data is kept private.
+      </li>
+    </ul>
+  </li>
 
-</head>
-<body class="is-preload">
+  <li class="mb-2">
+    <strong class="fw-bold d-block">What I focused on</strong>
+    <ul class="mb-0 ps-3">
+      <li>
+        <strong>Real-world behavior over happy paths:</strong>
+        Making location-based reminders behave predictably in real-world conditions instead of just the happy path — handling flaky GPS, permission toggles, app restarts, and background limits.
+      </li>
+      <li>
+        <strong>Structured async &amp; background work:</strong>
+        Using <code>coroutines</code>, <code>Flow</code>s, and <code>WorkManager</code> in a structured way so background work is cancelable and tied to the right lifecycle, while Compose reads state from a single <code>Room</code>-backed source of truth.
+      </li>
+      <li>
+        <strong>Maintainable &amp; testable code:</strong>
+        Writing code I can reason about later: clear naming, small functions, and interfaces/fakes around <code>Mapbox</code> and geofencing so most of the behavior can be unit-tested without a device.
+      </li>
+    </ul>
+  </li>
 
-	<!-- Sidebar -->
-	<section id="sidebar">
-		<div class="inner">
-			<nav>
-				<ul>
-					<li><a href="#intro">Welcome!</a></li>
-					<li><a href="#background">Background</a></li>
-					<li><a href="#education">Education</a></li>
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#majorProjects">Projects</a></li>
-					<li><a href="#minorProjects">More projects</a></li>
-					<li><a href="#getintouch">Get in touch</a></li><br>
-				</ul>
-			</nav>
-		</div>
-	</section>
+  <li class="mb-0">
+    <strong class="fw-bold d-block">Testing &amp; CI/CD</strong>
+    <ul class="mb-0 ps-3">
+      <li>
+        <strong>Unit tests for core logic:</strong>
+        Unit tests around repositories and <code>ViewModel</code>s for notes and geofences so I can verify business logic without relying on a device or emulator.
+      </li>
+      <li>
+        <strong>Automated CI on each change:</strong>
+        A <code>GitHub Actions</code> workflow runs the unit test suite on each push and pull request, helping catch regressions in core features before changes ship.
+      </li>
+      <li>
+        <strong>Release pipeline to Google Play:</strong>
+        A separate release workflow builds a signed release and uploads it to <code>Google Play</code> when I push to the <code>release</code> branch, giving me hands-on experience with a lightweight mobile CI/CD pipeline similar to a real team.
+      </li>
+    </ul>
+  </li>
+</ul>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Intro -->
+</div>
+<!-- Optional: demo/video link if you add later -->
+<!-- <a class="btn btn-outline-dark btn-sm text-uppercase" href="DEMO_LINK" target="_blank">
+         Live demo
+       </a> -->	
 
-		<section id="intro" class="wrapper style1 fullscreen fade-up">
-			<div class="inner">
-				<h1 class ="Greeting">Hello!</h1>
-				<h1>I am Joo Hyun Park.</h1>
+</div>
+	         <a class="btn btn-dark btn-xl text-uppercase me-2" href="https://github.com/JooHyunPark-JP/NearbyNote" target="_blank">
+        Github
+       </a>
+	           <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+          <i class="fas fa-xmark me-1">
+          </i>
+          Close Project
+         </button>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Portfolio item 2 modal popup-->
+  <div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal2" role="dialog" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="close-modal" data-bs-dismiss="modal">
+      <img alt="Close modal" src="assets/img/close-icon.svg"/>
+     </div>
+     <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-lg-8">
+        <div class="modal-body">
+         <!-- Project details-->
+         <h2 class="text-uppercase">
+          HealthFusion
+         </h2>
+         <p class="item-intro text-muted">
+          A health management app that tracking workout data, built with modern android development tech stacks.
+         </p>
+         <div class="ratio ratio-4x3 mb-4 carousel-box" style="--bs-aspect-ratio: 100%;">
+          <div class="carousel slide w-100 h-100" data-bs-ride="carousel" id="portfolioCarousel-healthfusion">
+           <div class="carousel-indicators">
+            <button aria-current="true" aria-label="Slide 1" class="active" data-bs-slide-to="0" data-bs-target="#portfolioCarousel-healthfusion" type="button">
+            </button>
+            <button aria-label="Slide 2" data-bs-slide-to="1" data-bs-target="#portfolioCarousel-healthfusion" type="button">
+            </button>
+            <button aria-label="Slide 3" data-bs-slide-to="2" data-bs-target="#portfolioCarousel-healthfusion" type="button">
+            </button>
+            <button aria-label="Slide 4" data-bs-slide-to="3" data-bs-target="#portfolioCarousel-healthfusion" type="button">
+            </button>
+            <button aria-label="Slide 5" data-bs-slide-to="4" data-bs-target="#portfolioCarousel-healthfusion" type="button">
+            </button>
+           </div>
+           <div class="carousel-inner w-100 h-100">
+            <div class="carousel-item active h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="HealthFusion_calander" class="d-block" src="assets/img/portfolio/healthFusion_img/HealthFusion_calander.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="HealthFusion_main" class="d-block" src="assets/img/portfolio/healthFusion_img/HealthFusion_main.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="HealthFusion_main" class="d-block" src="assets/img/portfolio/healthFusion_img/HealthFusion_list.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="HealthFusion_main" class="d-block" src="assets/img/portfolio/healthFusion_img/HealthFusion_graph.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+            <div class="carousel-item h-100">
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="HealthFusion_main" class="d-block" src="assets/img/portfolio/healthFusion_img/HealthFusion_workoutGoal.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+            </div>
+           </div>
+           <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#portfolioCarousel-healthfusion" type="button">
+            <span aria-hidden="true" class="carousel-control-prev-icon">
+            </span>
+            <span class="visually-hidden">
+             Previous
+            </span>
+           </button>
+           <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#portfolioCarousel-healthfusion" type="button">
+            <span aria-hidden="true" class="carousel-control-next-icon">
+            </span>
+            <span class="visually-hidden">
+             Next
+            </span>
+           </button>
+          </div>
+         </div>
+<div class="nearbynote-text text-start">
+  <p>
+    HealthFusion is a workout-tracking app that helps people log their workouts and stay consistent with their fitness goals.
+    Users can add workouts with details like sets, reps, weights, or duration, tag them by type, and review their history through a calendar view and progress charts.
+    The app also supports daily and weekly workout goals, offline-friendly logging with automatic cloud sync when online, and per-user accounts so data stays backed up and private.
+  </p>
+  <ul class="list-unstyled text-start mb-3">
+    <li class="mb-2">
+      <strong class="fw-bold d-block">Tech stack</strong>
+      Kotlin, Jetpack Compose, MVVM, Hilt, Room, Coroutines/Flow, Firebase Firestore, Firebase Authentication, Ktor + kotlinx.serialization
+    </li>
 
-					<p>I am an <b>Android developer</b> who strives to learn and always pursues the latest Android technologies. <br/></p>
+    <li class="mb-2">
+      <strong class="fw-bold d-block">Architecture</strong>
+      <ul class="mb-0 ps-3">
+        <li>
+          <strong>MVVM with Hilt-injected ViewModels:</strong>
+          The workout feature has its own ViewModel that exposes UI state as <code>StateFlow</code> for Compose screens. Hilt provides the Room DAOs, <code>FirestoreRepository</code>, and <code>NetworkHelper</code>, so UI code never talks directly to Firebase or the database.
+        </li>
+        <li>
+          <strong>Room as the single source of truth:</strong>
+          An <code>AppDatabase</code> stores workouts, workout goals, and goal details. DAOs return <code>Flow</code> objects that feed into the ViewModels, and Compose observes those flows so the UI is always driven from the same local database state, online or offline.
+        </li>
+        <li>
+          <strong>Offline-first sync layer with Firestore:</strong>
+          Local changes are written to Room first and marked with <code>isSynced</code> and <code>lastModified</code> fields. Sync functions in the ViewModels convert entities to DTOs and use a shared <code>FirestoreRepository</code> to push unsynced data and pull remote changes, resolving conflicts based on which side has the newer timestamp.
+        </li>
+        <li>
+          <strong>Composable navigation graphs for auth &amp; main app:</strong>
+          <code>AuthNavGraph</code> handles login/sign-up, and a main <code>NavGraph</code> routes between workout screens. Navigation uses typed arguments (for example, passing a workout goal type into the goal-setting screen) instead of ad-hoc string extras, which keeps routing safer and easier to maintain.
+        </li>
+      </ul>
+    </li>
 
-				<p>I graduated with an Honours Bachelor of Computer Science (Mobile Computing)<br /> from Sheridan College,
-					where I specialized in computer science,<br /> focusing specifically on <b>Mobile development</b> and <b> Software Engineering. </b><br />
+    <li class="mb-2">
+      <strong class="fw-bold d-block">Reliability</strong>
+      <ul class="mb-0 ps-3">
+        <li>
+          <strong>Room-backed workout history:</strong>
+          All workouts and workout goals are stored in a Room database, and Compose screens always render from that local state, so logging and browsing history still work even if Firestore or the network is down.
+        </li>
+        <li>
+          <strong>Offline logging with deferred sync:</strong>
+          New workouts are inserted into Room first with <code>isSynced = false</code> and a <code>lastModified</code> timestamp. When connectivity is available, the ViewModel finds unsynced rows and pushes them to Firestore, then marks them as synced so users don’t lose workouts just because they were offline.
+        </li>
+        <li>
+          <strong>Network-aware cloud operations &amp; safe deletes:</strong>
+          A <code>NetworkHelper</code> checks connectivity before calling Firestore for saves, deletes, or initial syncs. Firestore deletes are best-effort, but the app always removes the workout from Room, so the UI never gets stuck waiting for the network to cooperate.
+        </li>
+        <li>
+          <strong>Timestamp-based conflict handling:</strong>
+          When the user logs in and a <code>userId</code> is set, the app pulls workouts from Firestore and compares each item’s <code>lastModified</code> with the local copy. Only newer cloud data overwrites Room, which prevents stale data from another device from clobbering recent local edits.
+        </li>
+      </ul>
+    </li>
 
-					
+    <li class="mb-2">
+      <strong class="fw-bold d-block">What I focused on</strong>
+      <ul class="mb-0 ps-3">
+        <li>
+          <strong>Offline-first workout logging:</strong>
+          Designing the app so adding and browsing workouts never depends on the network — Room is always the source of truth, and Firestore is treated as a sync/backup layer instead of the primary database.
+        </li>
+        <li>
+          <strong>Clear data modeling for goals &amp; history:</strong>
+          Structuring entities and DAO queries for workouts and workout goals so calendar views and progress screens can be driven from the same underlying data, instead of hard-coded calculations in the UI.
+        </li>
+        <li>
+          <strong>Separation of concerns &amp; extensible code:</strong>
+          Keeping Compose screens thin by pushing logic into ViewModels and repositories, wiring them with <code>Flow</code>/<code>StateFlow</code>, and aiming for small, clearly named functions so it’s easy to extend the app later with new workout metrics or additional health features without a rewrite.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+         </ul>
+      </div>
+	         <a class="btn btn-dark btn-xl text-uppercase me-2" href="https://github.com/JooHyunPark-JP/HealthFusion" target="_blank">
+        Github
+       </a>
+	           <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+          <i class="fas fa-xmark me-1">
+          </i>
+          Close Project
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Portfolio item 3 modal popup-->
+  <div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal3" role="dialog" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="close-modal" data-bs-dismiss="modal">
+      <img alt="Close modal" src="assets/img/close-icon.svg"/>
+     </div>
+     <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-lg-8">
+        <div class="modal-body">
+         <!-- Project details-->
+         <h2 class="text-uppercase">
+          EarthQuake Guardian
+         </h2>
+         <p class="item-intro text-muted">
+          Lorem ipsum dolor sit amet consectetur.
+         </p>
+		              <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="HealthFusion_calander" class="d-block" src="assets/img/portfolio/earthquakeGuardianMain3.jpg" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
+         <div class="nearbynote-text text-start mt-4">
+          <p>
+           Co-developed a powerful mobile application, where first responders can efficiently rescue earthquake victims through mesh network technology within an earthquake zone. The civilians (victims from Earth Quake) also get benefits from this app.
+           This app allows victims to search for nearby users and ask for help by sending messages or pictures although their devices are not connected to the internet.
+          </p>
+          <ul class="list-unstyled text-start mb-3">
+           <li class="mb-2">
+            <strong class="fw-bold d-block">For more details...</strong>
+            Check out EarthQuake Guardian report for more details!
+           </li>
+          </ul>
+          <div class="text-center mb-3">
+           <a class="btn btn-dark btn-xl text-uppercase" href="assets/Quicsape_Capstone_Report_Document.pdf" target="_blank">
+            <i class="fa fa-download"></i>
+            EarthQuake Guardian Report
+           </a>
+          </div>
+         </div>
+         <a class="btn btn-dark btn-xl text-uppercase me-2" href="https://bitbucket.org/quicscape/quicscapealpha/src/master/" target="_blank">
+          <i class="fa fa-download"></i>
+          BitBucket
+         </a>
+         <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+          <i class="fas fa-xmark me-1"></i>
+          Close Project
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+<!-- Portfolio item 4 modal popup-->
+  <div aria-hidden="true" class="portfolio-modal modal fade" id="portfolioModal4" role="dialog" tabindex="-1">
+   <div class="modal-dialog">
+    <div class="modal-content">
+     <div class="close-modal" data-bs-dismiss="modal">
+      <img alt="Close modal" src="assets/img/close-icon.svg"/>
+     </div>
+     <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-lg-8">
+        <div class="modal-body">
+         <!-- Project details-->
+         <h2 class="text-uppercase">
+          Currency Converter
+         </h2>
+         <p class="item-intro text-muted">
+         </p>
+             <div class="d-flex align-items-center justify-content-center w-100 h-100">
+              <img alt="HealthFusion_calander" class="d-block" src="assets/img/portfolio/currency_converter_img/currencyMain.png" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;"/>
+             </div>
 
-				</p>
-				<ul class="actions">
-					<li><a href="#background" class="button scrolly">Background</a></li>
-					<li><a href="#education" class="button scrolly">Eduation</a></li>
-					<li><a href="#majorProjects" class="button scrolly">Projects</a></li>
-				</ul>
-				<ul class="actions">
-					<li><a href="#skills" class="button scrolly">Skills</a></li>
-					<li><a href="#resume" class="button scrolly">Resume</a></li>
-					<li><a href="#getintouch" class="button scrolly">Send a message to me!</a></li>
-				</ul>
-			</div>
-		</section>
-		<!--background section -->
+<p>
+  CurrencyConverter is a small Android app I built to practice clean MVVM, testing, and CI/CD around a simple, focused feature: converting money between currencies.
+  Users can pick a source and target currency from dropdowns, type an amount, and get a formatted result using live exchange rates from a remote API.
+  The app also crash free and handled all the exceptions or failed network calls.
+</p>
+  <ul class="list-unstyled text-start mb-3">
+    <li class="mb-2">
+      <strong class="fw-bold d-block">Tech stack</strong>
+      Kotlin, Jetpack Compose, MVVM, Hilt, Coroutines/Flow, Ktor + kotlinx.serialization, JUnit + MockK, GitHub Actions
+    </li>
 
+<li class="mb-2">
+  <strong class="fw-bold d-block">Architecture</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>MVVM with Hilt-injected repository:</strong>
+      A single <code>CurrencyViewModel</code> holds the screen state as a <code>StateFlow&lt;CurrencyUiState&gt;</code>. It doesn’t talk to the network layer directly; instead it depends on a <code>CurrencyRepository</code> interface provided by Hilt so the UI stays decoupled from API details.
+    </li>
+    <li>
+      <strong>Repository + Ktor API layer:</strong>
+      The repository implementation (<code>CurrencyRepositoryImpl</code>) delegates HTTP calls to a <code>CurrencyApiService</code> built on Ktor’s <code>HttpClient</code> with <code>ContentNegotiation</code> and <code>kotlinx.serialization</code>.
+    </li>
+    <li>
+      <strong>Test-friendly design with fakes:</strong>
+      Because the ViewModel depends on the <code>CurrencyRepository</code> interface, tests can swap in a <code>FakeCurrencyRepository</code> to simulate API results.
+    </li>
+  </ul>
+</li>
 
-		<!-- six -->
-		<section id="background" class="wrapper style4 fade-up">
-			<div class="inner">
-				<h2>About me</h2>
-				<div class="split style1">
-					<section>
-						<img src="images/portrait3.jpg" class="responsiveImage" >
-					</section>
-					<section>
-<h2>Introuduction</h2>
-			<ul class="introduction_dotbullets">
-	  <li>I am interested in beautiful things, Camomile tea and the world.</li>
-	  <li>My passion has always been in mobile development </li>
-	  <li>Everyday, I am studying and learning all kinds of important skills to further my software development career. </li>
-	</ul>
-							<div class = "contactrow">
+<li class="mb-2">
+  <strong class="fw-bold d-block">Reliability</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>Graceful handling of API failures:</strong>
+      Network calls are wrapped in <code>try/catch</code> blocks inside the <code>CurrencyViewModel</code>, and any exceptions update the <code>error</code> field in <code>CurrencyUiState</code> instead of crashing the app.
+    </li>
+    <li>
+      <strong>Input validation &amp; safe parsing:</strong>
+      The ViewModel validates the input amount before converting and falls back to safe values (like <code>"0.00"</code>) or an error message when the user types invalid text, so unexpected input doesn’t lead to inconsistent state or broken UI.
+    </li>
+    <li>
+      <strong>Single source of truth for UI state:</strong>
+      All screen data (selected currencies, amount, result, and error) lives in a single <code>CurrencyUiState</code> exposed as a <code>StateFlow</code>.
+    </li>
+  </ul>
+</li>
 
-								<div class = "contactInformation">
-									<h3>Personal information  <i class="fas fa-user-check"></i> </h3>
-									<p> Joo Hyun Park <br>
-										(E) pjh0629@gmail.com
-									</p>
-								</div>
-								<div id="resume" class = "contactResume">
-									<h3> Resume  <i class="fas fa-file"></i></h3>
-									<img id ="myImg" style="width:100%;max-width:10em">
-									<!-- <ul class="icons">
-										<a href="resume/resume_JooHyunPark.pdf" target="_blank" class = "button">
-											<i class="fa fa-download"></i> Download
-										</a>
-									</ul> --> 
-									<div class = "collegeCredential">
-										<h3>College Credential  <i class="fas fa-file"></i></h3>
-										<img id ="myImg3" src="images/collegeCredential.jpg" alt="Mobile Computing Credential" style="width:100%;max-width:10em">
-										<ul class="icons">
-											<a href="resume/Sheridan_Parchment.pdf" target="_blank" class = "button">
-												<i class="fa fa-download"></i> Credential
-											</a>
-										</ul>
-									</div>
-								</div>
-								<div class = "contactSocial">
-									<h3>Social  <i class="fas fa-share-alt"></i></h3>
-									<ul class="icons">
-										<li>GitHub: <a href="https://github.com/JooHyunPark-JP" target="_blank" class="icon brands fa-github"><span class="label">GitHub</span></a></li> <br>
-										<li>LinkedIn: <a href="https://www.linkedin.com/in/joo-hyun-park/" target="_blank" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-									</ul>
-								</div>
+<li class="mb-2">
+  <strong class="fw-bold d-block">What I focused on</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>Practicing production patterns on a tiny feature:</strong>
+      Treating a simple currency conversion screen as a sandbox to practice MVVM, Hilt DI, a repository abstraction, and a clear separation between UI, state, and network code.
+    </li>
+    <li>
+      <strong>Designing for testability from the start:</strong>
+      Depending on a <code>CurrencyRepository</code> interface in the ViewModel and using a <code>FakeCurrencyRepository</code> in tests so core behavior (conversion logic, error handling, and initial currency list) can be verified without real network calls.
+    </li>
+    <li>
+      <strong>End-to-end automation with CI/CD:</strong>
+      Wiring up GitHub Actions workflows so each push runs the unit tests, and a separate pipeline builds a release APK and publishes it as a GitHub Release.
+    </li>
+  </ul>
+</li>
 
-							</div>
-						</section>
-					</div>
-					<ul class="actions">
-						<li><a href="#intro" class="button scrolly">Go back to Top</a></li>
-					</ul>
-				</div>
-			</section>
+<li class="mb-0">
+  <strong class="fw-bold d-block">Testing &amp; CI/CD</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>Unit tests for ViewModel logic:</strong>
+      Wrote unit tests for <code>CurrencyViewModel</code> using a <code>FakeCurrencyRepository</code> and Kotlin coroutine test utilities. The tests verify happy-path conversions, invalid input handling, error state updates, and that the initial currency list is loaded as expected.
+    </li>
+    <li>
+      <strong>Network-free, deterministic tests:</strong>
+      By depending on the <code>CurrencyRepository</code> interface instead of the real Ktor client, tests run quickly and reliably without hitting the actual API, which makes it easy to cover edge cases like invalid target currencies or exceptions.
+    </li>
+    <li>
+      <strong>Automated CI on each change:</strong>
+      An <code>Android CI</code> GitHub Actions workflow runs <code>./gradlew testDebugUnitTest</code> on every push and pull request to <code>master</code>, <code>develop</code>, and <code>feature/**</code> branches, so broken tests are caught before changes are merged.
+    </li>
+    <li>
+      <strong>Release pipeline via GitHub Actions:</strong>
+      A separate <code>Android CD</code> workflow builds a release APK with <code>./gradlew assembleRelease</code> and uploads it as a GitHub Release (tagged <code>latest</code>), giving me hands-on experience with a lightweight CI/CD pipeline for a small Android app.
+    </li>
+  </ul>
+</li>
+  </ul>
 
-			<section id="education" class="wrapper style5 spotlights fade-up">
-				<div class="inner">
-					<div>
-						<h2>Eduction</h2>
-						<h3> <i class="fas fa-graduation-cap"></i> Honours Bachelor of Computer Science - Mobile Computing</h3>
-						<p class="noMargin"></i> Sheridan College - Oakville. <br> </i>  Sept 2015 - Dec 2019</p>
-						<p> Throughout the years of balancing theory and practicality in an educational environment, I have learned many key concepts in Software development and mobile development. </p>
-
-					</div>
-					<div class ="secondaryEducation">
-						<h3><i class="fas fa-graduation-cap" ></i> New Brunswick Secondary School Diploma</h3>
-						<p class="noMargin"></i>Bernice MacNaughton High School - New Brunswick. <br> </i>  June 2013</p>
-					</div>
-					<ul class="actions">
-						<li><a href="#intro" class="button scrolly">Go back to Top</a></li>
-					</ul>
-				</div>
-
-			</section>
-
-			<!-- Two -->
-			<section id="skills" class="wrapper style3 fade-up">
-				<div class="inner">
-					<h2>Skills and Technical Ability</h2>
-					<p>Also I'm currently learning <b>KMP (Kotlin MultiPlatform)</b> as well! <br></p>
-					<div class="features">
-						<section>
-							<span class="icon solid major fa-desktop"></span>
-							<h3>Language and Skill Techs</h3>
-							<p> Kotlin, Java, Google Firebase, Jetpack Compose, FireStore, Realm, Room, Git, XML, Ktor, Junit, GitHub Action </p>
-						</section>
-						<section>
-							<span class="icon solid major fa-desktop"></span>
-							<h3>Tools</h3>
-							<p>Android Studio (Java, Kotlin)</p>
-						</section>
-						</div>
-						
-											<ul class="actions">
-						<li><a href="#intro" class="button scrolly">Go back to Top</a></li>
-					</ul>
-
-					</section>
-
-
-					<!-- One -->
-					<section id="majorProjects" class="wrapper style2 spotlights fade-up">
-						<div class="inner">
-							<h2>Projects and Achievements</h2>
-						</div>
-						
-						<section>
-							<a class="image"><img src="images/nearbynote_notelist.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>NearbyNote - Kotlin</h2>
-									<p>Android location-based note app using Mapbox & geofencing. Create notes by text or voice and get notified when you arrive. </p>
-									<ul class="actions">
-										<li><a href="https://github.com/JooHyunPark-JP/NearbyNote" target="_blank" class="button"><i class="fa fa-download"></i> GitHub</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-
-						<section>
-							<a class="image"><img src="images/healthFusionMain.jpg" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>HealthFusion - Kotlin</h2>
-									<p>HealthFusion is a modern Android application that helps users track and manage their health efficiently. With features such as workout tracking, goal setting, and data visualization, </p>
-									<ul class="actions">
-										<li><a href="https://github.com/JooHyunPark-JP/HealthFusion" target="_blank" class="button"><i class="fa fa-download"></i> GitHub</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<div id="myModal" class="modal">
-								<span class="close">&times;</span>
-								<img class="modal-content" id="img01">
-								<div id="caption"></div>
-							</div>
-							<a class="image"><img src="images/EarthQuakeGuardian.gif" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>EarthQuake Guardian - Java<br></h2>
-									<h3><i class="fas fa-trophy"></i> Top 5 Capstone Projects</h3>
-									<h3><i class="fas fa-trophy"></i> Nominated for Recognition of Distinction for Real-World Applications in the Applied Computing Capstone Showcase - 2019</h3>
-										<p>Co-developed a powerful mobile application, where first responders can efficiently rescue earthquake victims through mesh network technology within an earthquake zone. The civilians (victims from Earth Quake) also get benefits from this app. This app allows
-										 victims to search for nearby users and ask for help by sending messages or pictures although their devices are not connected to the internet. Check out the in-depth report or explore the code through the bitbucket link.</p>
-									<img id ="myImg2" src="images/capstoneShowcase.jpg" alt="Nominated on Capstone Showcase" style="width:100%;max-width:8em"> </br></br>
-									<ul class="actions">
-										<a href="resume/Quicsape_Capstone_Report_Document.pdf" target="_blank" class="button">
-											<i class="fa fa-download"></i> EarthQuake Guardian Report</a>
-											<a href="https://bitbucket.org/quicscape/quicscapealpha/src/master/" target="_blank" class="button">
-												<i class="fa fa-download"></i> Bitbucket</a>
-											</ul>
-
-										</div>
-									</div>
-								</section>
-								<section>
-									<a class="image"><img src="images/missileAttack.gif" alt="" data-position="top center" /></a>
-									<div class="content">
-										<div class="inner">
-											<h2>Missile Attack - C#, Unity</h2>
-											<p>Created an Augmented Reality (AR) game that can be played through a Microsoft HoloLens Headset. The programming was written in C# using Visual Studio 2019 and Unity Engine (Unity Hub) for 3D meshes, motions, and environmental setup.
-											</p>
-											<p> -----</p>
-											<p>*I had a hard time posting the code onto Github since the project is made in Unity. Click the button below to download the project directly. Unity Hub and Visual Studio 2019 are required*</p>
-
-										</div>
-										<ul class="actions">
-											<li><a href="missile_attack/missile_attack_hololens.zip" target="_blank" class="button"><i class="fa fa-download"></i> Download Folder</a></li>
-										</ul>
-									</div>
-								</section>
-								<section>
-									<a class="image"><img src="images/3DSnake.gif" alt="" data-position="top center" /></a>
-									<div class="content">
-										<div class="inner">
-											<h2>3D Voxel Snake - C++</h2>
-											<p>3D Voxel Snake is a classic game where the user controls a snake and trys to touch randomly generated red squares. You must survive as long as possible without hitting the walls. The snake becomes longer every time it devours the red squares. This game was made in C++   </p>
-											<ul class="actions">
-												<li><a href="https://github.com/JooHyunPark-JP/3DVoxelSnake" target="_blank" class="button"><i class="fa fa-download"></i> GitHub</a></li>
-											</ul>
-										</div>
-									</div>
-								</section>
-
-
-							</section>
-
-							<!-- Three -->
-							<section id="minorProjects" class="wrapper style3 fade-up special">
-								<div class="inner">
-									<div class="textforleft">
-										<h2>More projects...</h2>
-										<p class = "pmargin">Side projects are also listed in this section!</p>
-									</div>
-									<div class="row gtr-150">
-										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="images/currencyConverterMain.jpg" alt="" /></span>
-											<h3>Currency Converter (Kotlin)</h3>
-											<p>Currency Converter allows users to convert currencies from one unit to another seamlessly. The app fetches real-time exchange rates using the Exchangerate-API.</br> </p>
-												<ul class="actions special">
-													<a href="https://github.com/JooHyunPark-JP/CurrencyConverter" target="_blank" class="button"><i class="fa fa-download"></i> GitHub</a>
-												</ul>
-											</div>
-										<div class="col-4 col-12-medium">
-												<span class="image fit"><img src="images/homechart4.png" alt="" /></span>
-												<h3>Apple Homekit: Smart home monitoring (Swift) </h3>
-												<p>Co-developed an iOS application for doctors and nurses to monitor the health condition of elders in a Smart Home environment (with a variety of sensors) that is supported by Apple Homekit.
-													The base application is programmed in Swift using XCode.
-												</p>
-												<ul class="actions special">
-													<a href="https://github.com/JooHyunPark-JP/Homekit-MonitoringPatient" target="_blank" class="button"><i class="fa fa-download"></i> GitHub</a>
-												</ul>
-											</div>
-										<div class="col-4 col-12-medium">
-											<span class="image fit"><img src="images/chatBot.jpg" alt="" /></span>
-											<h3>Chat Bot : Age of Empire 2 Units</h3>
-											<p>Created a Watson assistant chatbot by setting up multiple intents and event handlers for people who want to know
-												about units in the popular RTS game, Age of Empires 2. </p>
-												<ul class="actions special">
-													<a href="https://github.com/JooHyunPark-JP/AOE2Units-watsonChatbot" target="_blank" class="button"><i class="fa fa-download"></i> GitHub</a>
-												</ul>
-											</div>
-
-										</div>
-
-										<div class="row gtr-150">
-											<div class="col-4 col-12-medium">
-												<span class="image fit"><img src="images/RSVP.jpg" alt="" /></span>
-												<h3>RSVP</h3>
-												<p>An RSVP form where users can put down simple information about themselves by using ASP.NET technology with a local database.</p>
-												<ul class="actions special">
-													<a href="https://github.com/JooHyunPark-JP/RSVP" target="_blank" class="button"><i class="fa fa-download"></i> GitHub</a>
-												</ul>
-											</div>
-											<div class="col-4 col-12-medium">
-												<span class="image fit"><img src="images/missileDuck.jpg" alt="" /></span>
-												<h3>Missile Duck</h3>
-												<p>Co-developed a game application called “Laser Duck” in Python (implemented and can be played on a <b>Raspberry pi</b>)
-													where the user shoots a laser to destroy incoming missiles.</p>
-													<ul class="actions special">
-														<a href="https://arcade.makecode.com/24284-78507-53768-73293" target="_blank" class="button">
-															<i class="fa fa-download"></i> Try it out!</a>
-														</ul>
-													</div>
-												</div>
-
-											</div>
-
-										</section>
-										<!-- six -->
-										<section id="getintouch" class="wrapper style1 fade-up">
-											<div class="inner">
-												<h2>Get in touch</h2>
-												<p>Feel free to send a message to me! <br> You can send am email to pjh0629@gmail.com
-													<!--
-													<div class=" style1">
-														<section>
-															<form method="post" action="mailto:pjh0629@gmail.com">
-																<div class="fields">
-																	<div class="field half">
-																		<label for="name">Name</label>
-																		<input type="text" name="name" id="name" />
-																	</div>
-																	<div class="field half">
-																		<label for="email">Email</label>
-																		<input type="text" name="email" id="email" />
-																	</div>
-																	<div class="field">
-																		<label for="message">Message</label>
-																		<textarea name="message" id="message" rows="5"></textarea>
-																	</div>
-																</div>
-
-																<ul class="actions">
-																	<li><a href="" class="button submit">Send Message</a></li>
-																	<li><a href="#intro" class="button scrolly">Go back to Top</a></li>
-																</ul>
-															</form>
-														</section>
-														
-														-->
-
-														<!--
-														<section>
-														<ul class="contact">
-														<li>
-														<h3>Address</h3>
-														<span>12345 Somewhere Road #654<br />
-														Nashville, TN 00000-0000<br />
-														USA</span>
-													</li>
-													<li>
-													<h3>Email</h3>
-													<a href="#">user@untitled.tld</a>
-												</li>
-												<li>
-												<h3>Phone</h3>
-												<span>(000) 000-0000</span>
-											</li>
-											<li>
-											<h3>Social</h3>
-											<ul class="icons">
-											<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-											<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-										</ul>
-									</li>
-								</ul>
-							</section>
-						</div>
-					</div>
-				</section>
-			-->
-		</div>
-	</div>
-
-	<!-- Footer -->
-	<footer id="footer" class="wrapper style1-alt">
-		<div class="inner">
-			<ul class="menu">
-				<li>&copy; Joo Hyun Park. All rights reserved.</li><li>Design: Initial Design by HTML5 UP</li>
-			</ul>
-		</div>
-	</footer>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
-</body>
+         <a class="btn btn-dark btn-xl text-uppercase me-2" href="https://github.com/JooHyunPark-JP/CurrencyConverter" target="_blank">
+          <i class="fa fa-download"></i>
+          GitHub
+         </a>
+	 
+         <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal" type="button">
+          <i class="fas fa-xmark me-1">
+          </i>
+          Close Project
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js">
+  </script>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <!-- * *                               SB Forms JS                               * *-->
+  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js">
+  </script>
+  <!-- === BEGIN: img2 simple modal (injected) === -->
+  <div aria-hidden="true" class="img-modal" id="img2Modal">
+   <div aria-labelledby="img2ModalCaption" aria-modal="true" class="img-modal__dialog" role="dialog">
+    <button aria-label="Close" class="img-modal__close" id="img2ModalClose">
+     &times;
+    </button>
+    <img alt="" id="img2ModalImg"/>
+    <div class="img-modal__caption" id="img2ModalCaption">
+    </div>
+   </div>
+  </div>
+  <script src="js/img2-modal.js">
+  </script>
+  <!-- === END: img2 simple modal (injected) === -->
+ </body>
 </html>
