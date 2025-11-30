@@ -284,7 +284,7 @@
          CurrencyConverter
         </div>
         <div class="portfolio-caption-subheading text-muted">
-         Small Kotlin app to practice testable architecture, unit testing, and GitHub Actions CI.
+         Simple Kotlin app to practice testable architecture, unit testing, and GitHub Actions CI.
         </div>
        </div>
       </div>
@@ -421,9 +421,9 @@
        </div>
             <div class="nearbynote-text text-start">
 <p>
-  NearbyNote is a location-based reminder app that lets people pin notes to real-world places and get notified when they enter the area.
+  <code>NearbyNote is a location-based reminder app that lets people pin notes to real-world places and get notified when they enter the area.</code>
   Users can create notes from a Mapbox-powered map or by searching for an address, choose a radius for the reminder, and then view their notes either on the map or in a list.
-  The app also supports favorite places (like home or work) for quick reuse and voice input for creating notes hands-free.
+  The app also supports favorite places (like home or work) for quick reuse and also supported voice input for creating notes hands-free.
 </p>
 <ul class="list-unstyled text-start mb-3">
   <li class="mb-2">
@@ -432,82 +432,190 @@
   </li>
   <li class="mb-2">
     <strong class="fw-bold d-block">Architecture</strong>
-    <ul class="mb-0 ps-3">
+<ul class="mb-0 ps-3">
+  <li>
+    <strong>MVVM with Hilt-injected repositories:</strong>
+    <ul class="mb-2 ps-3">
       <li>
-        <strong>MVVM with Hilt-injected repositories:</strong>
-        Each screen has a <code>ViewModel</code> that exposes UI state as Compose state/<code>Flow</code>s and delegates data work to repositories instead of touching <code>Room</code> or <code>Mapbox</code> directly.
+        Each screen has a <code>ViewModel</code> that exposes UI state as Compose state/<code>Flows</code>.
       </li>
       <li>
-        <strong>Testable interfaces:</strong>
-        Interfaces like <code>GeofenceRepository</code> and <code>MapboxRepository</code>, plus fakes in the test package, let me unit-test geofence and Mapbox logic without real Android services or network calls.
-      </li>
-      <li>
-        <strong>Navigation using NavGraphs:</strong>
-        A single <code>NavHost</code> with a bottom navigation bar routes between note list, map, read/write note, and saved-address screens, using typed arguments (e.g., <code>noteId: Long?</code>) instead of manual intent extras.
-      </li>
-      <li>
-        <strong>Room as a single source of truth:</strong>
-        One <code>Room</code> database storing notes, geofences, and saved addresses; DAOs expose <code>Flow</code>s that feed into <code>ViewModel</code>s and also power background workers, so geofence state can be rebuilt after reboots or app updates.
+        Data work is delegated to repositories instead of touching <code>Room</code> or <code>Mapbox</code> directly, which keeps UI code clean and testable.
       </li>
     </ul>
   </li>
-  <li class="mb-2">
-    <strong class="fw-bold d-block">Reliability</strong>
+
+  <li>
+    <strong>Testable interfaces:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
+        Interfaces like <code>GeofenceRepository</code> and <code>MapboxRepository</code> sit between the ViewModel and the underlying services.
+      </li>
+      <li>
+        Fakes in the test package makes easier to unit-test geofence and Mapbox behavior without real Android services or network calls.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Navigation using NavGraphs:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
+        A single <code>NavHost</code> with a bottom navigation bar and a top app bar coordinates navigation between screens.
+      </li>
+      <li>
+        Routes cover the note list, map, read/write note, and saved-address screens, so the whole app flows through one central navigation graph.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Room as a single source of truth:</strong>
     <ul class="mb-0 ps-3">
       <li>
-        <strong>Room-backed geofence state:</strong>
+        One <code>Room</code> database stores notes, geofences, and saved addresses as the canonical data source.
+      </li>
+      <li>
+        DAOs expose <code>Flows</code> that feed into <code>ViewModels</code> and can also be reused by background workers when geofences need to be rebuilt.
+      </li>
+    </ul>
+  </li>
+</ul>
+  </li>
+  <li class="mb-2">
+    <strong class="fw-bold d-block">Reliability</strong>
+<ul class="mb-0 ps-3">
+  <li>
+    <strong>Room-backed geofence state:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
         Geofences are stored in <code>Room</code> instead of only in memory, so the app can always recover the full set of active geofences from the database.
       </li>
       <li>
-        <strong>Background reconcile worker:</strong>
-        A geofence reconcile worker, triggered by boot and package-replaced broadcast receivers, re-registers geofences after device reboots or app/Play Services updates without relying on a foreground service.
-      </li>
-      <li>
-        <strong>Notification sync:</strong>
-        Notifications are driven from the same database state and can be cancelled via a dedicated receiver, which helps prevent “ghost” reminders when geofences are edited or removed.
-      </li>
-      <li>
-        <strong>Permission handling:</strong>
-        Location permissions, including background access, are requested only when needed with clear in-app explanations and a linked privacy policy, so users understand why location is used and how their data is kept private.
+        Background workers can rebuild all active geofences from this Room state after reboots or updates.
       </li>
     </ul>
+  </li>
+
+  <li>
+    <strong>Background reconcile worker:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
+        A geofence reconcile worker, triggered by boot and package-replaced broadcast receivers, re-registers geofences after device reboots or app/Play Services updates.
+      </li>
+      <li>
+        This avoids relying on a foreground service just to keep geofences alive.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Notification sync:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
+        Notifications are driven from the same database state and can be cancelled via a dedicated receiver.
+      </li>
+      <li>
+        This helps prevent “ghost” reminders when geofences are edited or removed.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Permission handling:</strong>
+    <ul class="mb-0 ps-3">
+      <li>
+        Location permissions, including background access, are requested only when needed with clear in-app explanations.
+      </li>
+      <li>
+        A linked privacy policy explains why location is used and how user data is kept private.
+      </li>
+    </ul>
+  </li>
+</ul>
   </li>
 
   <li class="mb-2">
     <strong class="fw-bold d-block">What I focused on</strong>
-    <ul class="mb-0 ps-3">
+<ul class="mb-0 ps-3">
+  <li>
+    <strong>Real-world behavior over happy paths:</strong>
+    <ul class="mb-2 ps-3">
       <li>
-        <strong>Real-world behavior over happy paths:</strong>
-        Making location-based reminders behave predictably in real-world conditions instead of just the happy path — handling flaky GPS, permission toggles, app restarts, and background limits.
+        Making location-based reminders behave predictably in real-world conditions instead of just the happy path.
       </li>
       <li>
-        <strong>Structured async &amp; background work:</strong>
-        Using <code>coroutines</code>, <code>Flow</code>s, and <code>WorkManager</code> in a structured way so background work is cancelable and tied to the right lifecycle, while Compose reads state from a single <code>Room</code>-backed source of truth.
-      </li>
-      <li>
-        <strong>Maintainable &amp; testable code:</strong>
-        Writing code I can reason about later: clear naming, small functions, and interfaces/fakes around <code>Mapbox</code> and geofencing so most of the behavior can be unit-tested without a device.
+        Handling flaky GPS, permission toggles, app restarts, and Android background limits so reminders keep working over time.
       </li>
     </ul>
   </li>
 
-  <li class="mb-0">
-    <strong class="fw-bold d-block">Testing &amp; CI/CD</strong>
-    <ul class="mb-0 ps-3">
+  <li>
+    <strong>Structured async &amp; background work:</strong>
+    <ul class="mb-2 ps-3">
       <li>
-        <strong>Unit tests for core logic:</strong>
-        Unit tests around repositories and <code>ViewModel</code>s for notes and geofences so I can verify business logic without relying on a device or emulator.
+        Using <code>coroutines</code>, <code>Flows</code>, and <code>WorkManager</code> in a structured way so background work is cancelable and tied to the right lifecycle.
       </li>
       <li>
-        <strong>Automated CI on each change:</strong>
-        A <code>GitHub Actions</code> workflow runs the unit test suite on each push and pull request, helping catch regressions in core features before changes ship.
-      </li>
-      <li>
-        <strong>Release pipeline to Google Play:</strong>
-        A separate release workflow builds a signed release and uploads it to <code>Google Play</code> when I push to the <code>release</code> branch, giving me hands-on experience with a lightweight mobile CI/CD pipeline similar to a real team.
+        Keeping Compose screens reading from a single <code>Room</code>-backed source of truth so UI and background tasks never drift out of sync.
       </li>
     </ul>
   </li>
+
+  <li>
+    <strong>Maintainable &amp; testable code:</strong>
+    <ul class="mb-0 ps-3">
+      <li>
+        Writing code I can reason about later: clear naming, small functions, and focused responsibilities per class.
+      </li>
+      <li>
+        Using interfaces and fakes around Mapbox and geofencing so most behavior can be unit-tested without a device.
+      </li>
+    </ul>
+  </li>
+</ul>
+  </li>
+
+<li class="mb-0">
+  <strong class="fw-bold d-block">Testing &amp; CI/CD</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>Unit tests for core logic:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          Unit tests around repositories and <code>ViewModels</code> for notes and geofences.
+        </li>
+        <li>
+          Tests focus on business logic so can be verified behavior without relying on a device or emulator.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Automated CI on each change:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          A <code>GitHub Actions</code> workflow runs the unit test suite on each push and pull request.
+        </li>
+        <li>
+          This helps catch regressions in core features before changes are merged or shipped.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Release pipeline to Google Play:</strong>
+      <ul class="mb-0 ps-3">
+        <li>
+          A separate release workflow builds a signed release and uploads it to <code>Google Play console</code> when push to the <code>release</code> branch.
+        </li>
+        <li>
+          This gives me hands-on experience with a lightweight mobile CI/CD pipeline similar to what a real team would use.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
 </ul>
 
 </div>
