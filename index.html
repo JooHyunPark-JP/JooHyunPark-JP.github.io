@@ -207,7 +207,7 @@
          NearByNote
         </div>
         <div class="portfolio-caption-subheading text-muted">
-         Modern location-based reminder app
+         Location-based reminder app
         </div>
        </div>
       </div>
@@ -284,7 +284,7 @@
          CurrencyConverter
         </div>
         <div class="portfolio-caption-subheading text-muted">
-         Small Kotlin app to practice testable architecture, unit testing, and GitHub Actions CI.
+         Simple Kotlin app to practice testable architecture, unit testing, and GitHub Actions CI.
         </div>
        </div>
       </div>
@@ -428,9 +428,9 @@
        </div>
             <div class="nearbynote-text text-start">
 <p>
-  NearbyNote is a location-based reminder app that lets people pin notes to real-world places and get notified when they enter the area.
+  <code>NearbyNote is a location-based reminder app that lets people pin notes to real-world places and get notified when they enter the area.</code>
   Users can create notes from a Mapbox-powered map or by searching for an address, choose a radius for the reminder, and then view their notes either on the map or in a list.
-  The app also supports favorite places (like home or work) for quick reuse and voice input for creating notes hands-free.
+  The app also supports favorite places (like home or work) for quick reuse and also supported voice input for creating notes hands-free.
 </p>
 <ul class="list-unstyled text-start mb-3">
   <li class="mb-2">
@@ -439,82 +439,190 @@
   </li>
   <li class="mb-2">
     <strong class="fw-bold d-block">Architecture</strong>
-    <ul class="mb-0 ps-3">
+<ul class="mb-0 ps-3">
+  <li>
+    <strong>MVVM with Hilt-injected repositories:</strong>
+    <ul class="mb-2 ps-3">
       <li>
-        <strong>MVVM with Hilt-injected repositories:</strong>
-        Each screen has a <code>ViewModel</code> that exposes UI state as Compose state/<code>Flow</code>s and delegates data work to repositories instead of touching <code>Room</code> or <code>Mapbox</code> directly.
+        Each screen has a <code>ViewModel</code> that exposes UI state as Compose state/<code>Flows</code>.
       </li>
       <li>
-        <strong>Testable interfaces:</strong>
-        Interfaces like <code>GeofenceRepository</code> and <code>MapboxRepository</code>, plus fakes in the test package, let me unit-test geofence and Mapbox logic without real Android services or network calls.
-      </li>
-      <li>
-        <strong>Navigation using NavGraphs:</strong>
-        A single <code>NavHost</code> with a bottom navigation bar routes between note list, map, read/write note, and saved-address screens, using typed arguments (e.g., <code>noteId: Long?</code>) instead of manual intent extras.
-      </li>
-      <li>
-        <strong>Room as a single source of truth:</strong>
-        One <code>Room</code> database storing notes, geofences, and saved addresses; DAOs expose <code>Flow</code>s that feed into <code>ViewModel</code>s and also power background workers, so geofence state can be rebuilt after reboots or app updates.
+        Data work is delegated to repositories instead of touching <code>Room</code> or <code>Mapbox</code> directly, which keeps UI code clean and testable.
       </li>
     </ul>
   </li>
-  <li class="mb-2">
-    <strong class="fw-bold d-block">Reliability</strong>
+
+  <li>
+    <strong>Testable interfaces:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
+        Interfaces like <code>GeofenceRepository</code> and <code>MapboxRepository</code> sit between the ViewModel and the underlying services.
+      </li>
+      <li>
+        Fakes in the test package makes easier to unit-test geofence and Mapbox behavior without real Android services or network calls.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Navigation using NavGraphs:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
+        A single <code>NavHost</code> with a bottom navigation bar and a top app bar coordinates navigation between screens.
+      </li>
+      <li>
+        Routes cover the note list, map, read/write note, and saved-address screens, so the whole app flows through one central navigation graph.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Room as a single source of truth:</strong>
     <ul class="mb-0 ps-3">
       <li>
-        <strong>Room-backed geofence state:</strong>
+        One <code>Room</code> database stores notes, geofences, and saved addresses as the canonical data source.
+      </li>
+      <li>
+        DAOs expose <code>Flows</code> that feed into <code>ViewModels</code> and can also be reused by background workers when geofences need to be rebuilt.
+      </li>
+    </ul>
+  </li>
+</ul>
+  </li>
+  <li class="mb-2">
+    <strong class="fw-bold d-block">Reliability</strong>
+<ul class="mb-0 ps-3">
+  <li>
+    <strong>Room-backed geofence state:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
         Geofences are stored in <code>Room</code> instead of only in memory, so the app can always recover the full set of active geofences from the database.
       </li>
       <li>
-        <strong>Background reconcile worker:</strong>
-        A geofence reconcile worker, triggered by boot and package-replaced broadcast receivers, re-registers geofences after device reboots or app/Play Services updates without relying on a foreground service.
-      </li>
-      <li>
-        <strong>Notification sync:</strong>
-        Notifications are driven from the same database state and can be cancelled via a dedicated receiver, which helps prevent “ghost” reminders when geofences are edited or removed.
-      </li>
-      <li>
-        <strong>Permission handling:</strong>
-        Location permissions, including background access, are requested only when needed with clear in-app explanations and a linked privacy policy, so users understand why location is used and how their data is kept private.
+        Background workers can rebuild all active geofences from this Room state after reboots or updates.
       </li>
     </ul>
+  </li>
+
+  <li>
+    <strong>Background reconcile worker:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
+        A geofence reconcile worker, triggered by boot and package-replaced broadcast receivers, re-registers geofences after device reboots or app/Play Services updates.
+      </li>
+      <li>
+        This avoids relying on a foreground service just to keep geofences alive.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Notification sync:</strong>
+    <ul class="mb-2 ps-3">
+      <li>
+        Notifications are driven from the same database state and can be cancelled via a dedicated receiver.
+      </li>
+      <li>
+        This helps prevent “ghost” reminders when geofences are edited or removed.
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Permission handling:</strong>
+    <ul class="mb-0 ps-3">
+      <li>
+        Location permissions, including background access, are requested only when needed with clear in-app explanations.
+      </li>
+      <li>
+        A linked privacy policy explains why location is used and how user data is kept private.
+      </li>
+    </ul>
+  </li>
+</ul>
   </li>
 
   <li class="mb-2">
     <strong class="fw-bold d-block">What I focused on</strong>
-    <ul class="mb-0 ps-3">
+<ul class="mb-0 ps-3">
+  <li>
+    <strong>Real-world behavior over happy paths:</strong>
+    <ul class="mb-2 ps-3">
       <li>
-        <strong>Real-world behavior over happy paths:</strong>
-        Making location-based reminders behave predictably in real-world conditions instead of just the happy path — handling flaky GPS, permission toggles, app restarts, and background limits.
+        Making location-based reminders behave predictably in real-world conditions instead of just the happy path.
       </li>
       <li>
-        <strong>Structured async &amp; background work:</strong>
-        Using <code>coroutines</code>, <code>Flow</code>s, and <code>WorkManager</code> in a structured way so background work is cancelable and tied to the right lifecycle, while Compose reads state from a single <code>Room</code>-backed source of truth.
-      </li>
-      <li>
-        <strong>Maintainable &amp; testable code:</strong>
-        Writing code I can reason about later: clear naming, small functions, and interfaces/fakes around <code>Mapbox</code> and geofencing so most of the behavior can be unit-tested without a device.
+        Handling flaky GPS, permission toggles, app restarts, and Android background limits so reminders keep working over time.
       </li>
     </ul>
   </li>
 
-  <li class="mb-0">
-    <strong class="fw-bold d-block">Testing &amp; CI/CD</strong>
-    <ul class="mb-0 ps-3">
+  <li>
+    <strong>Structured async &amp; background work:</strong>
+    <ul class="mb-2 ps-3">
       <li>
-        <strong>Unit tests for core logic:</strong>
-        Unit tests around repositories and <code>ViewModel</code>s for notes and geofences so I can verify business logic without relying on a device or emulator.
+        Using <code>coroutines</code>, <code>Flows</code>, and <code>WorkManager</code> in a structured way so background work is cancelable and tied to the right lifecycle.
       </li>
       <li>
-        <strong>Automated CI on each change:</strong>
-        A <code>GitHub Actions</code> workflow runs the unit test suite on each push and pull request, helping catch regressions in core features before changes ship.
-      </li>
-      <li>
-        <strong>Release pipeline to Google Play:</strong>
-        A separate release workflow builds a signed release and uploads it to <code>Google Play</code> when I push to the <code>release</code> branch, giving me hands-on experience with a lightweight mobile CI/CD pipeline similar to a real team.
+        Keeping Compose screens reading from a single <code>Room</code>-backed source of truth so UI and background tasks never drift out of sync.
       </li>
     </ul>
   </li>
+
+  <li>
+    <strong>Maintainable &amp; testable code:</strong>
+    <ul class="mb-0 ps-3">
+      <li>
+        Writing code I can reason about later: clear naming, small functions, and focused responsibilities per class.
+      </li>
+      <li>
+        Using interfaces and fakes around Mapbox and geofencing so most behavior can be unit-tested without a device.
+      </li>
+    </ul>
+  </li>
+</ul>
+  </li>
+
+<li class="mb-0">
+  <strong class="fw-bold d-block">Testing &amp; CI/CD</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>Unit tests for core logic:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          Unit tests around repositories and <code>ViewModels</code> for notes and geofences.
+        </li>
+        <li>
+          Tests focus on business logic so can be verified behavior without relying on a device or emulator.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Automated CI on each change:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          A <code>GitHub Actions</code> workflow runs the unit test suite on each push and pull request.
+        </li>
+        <li>
+          This helps catch regressions in core features before changes are merged or shipped.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Release pipeline to Google Play:</strong>
+      <ul class="mb-0 ps-3">
+        <li>
+          A separate release workflow builds a signed release and uploads it to <code>Google Play console</code> when push to the <code>release</code> branch.
+        </li>
+        <li>
+          This gives me hands-on experience with a lightweight mobile CI/CD pipeline similar to what a real team would use.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
 </ul>
 
 </div>
@@ -634,7 +742,7 @@
          </div>
 <div class="nearbynote-text text-start">
   <p>
-    HealthFusion is a workout-tracking app that helps people log their workouts and stay consistent with their fitness goals.
+    <code>HealthFusion is a workout-tracking app that helps people log their workouts. </code>
     Users can add workouts with details like sets, reps, weights, or duration, tag them by type, and review their history through a calendar view and progress charts.
     The app also supports daily and weekly workout goals, offline-friendly logging with automatic cloud sync when online, and per-user accounts so data stays backed up and private.
   </p>
@@ -644,67 +752,152 @@
       Kotlin, Jetpack Compose, MVVM, Hilt, Room, Coroutines/Flow, Firebase Firestore, Firebase Authentication, Ktor + kotlinx.serialization
     </li>
 
-    <li class="mb-2">
-      <strong class="fw-bold d-block">Architecture</strong>
-      <ul class="mb-0 ps-3">
+<li class="mb-2">
+  <strong class="fw-bold d-block">Architecture</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>MVVM with Hilt-injected ViewModels:</strong>
+      <ul class="mb-2 ps-3">
         <li>
-          <strong>MVVM with Hilt-injected ViewModels:</strong>
-          The workout feature has its own ViewModel that exposes UI state as <code>StateFlow</code> for Compose screens. Hilt provides the Room DAOs, <code>FirestoreRepository</code>, and <code>NetworkHelper</code>, so UI code never talks directly to Firebase or the database.
+          The workout feature has its own <code>ViewModel</code> that exposes UI state as StateFlow for Compose screens.
         </li>
         <li>
-          <strong>Room as the single source of truth:</strong>
-          An <code>AppDatabase</code> stores workouts, workout goals, and goal details. DAOs return <code>Flow</code> objects that feed into the ViewModels, and Compose observes those flows so the UI is always driven from the same local database state, online or offline.
-        </li>
-        <li>
-          <strong>Offline-first sync layer with Firestore:</strong>
-          Local changes are written to Room first and marked with <code>isSynced</code> and <code>lastModified</code> fields. Sync functions in the ViewModels convert entities to DTOs and use a shared <code>FirestoreRepository</code> to push unsynced data and pull remote changes, resolving conflicts based on which side has the newer timestamp.
-        </li>
-        <li>
-          <strong>Composable navigation graphs for auth &amp; main app:</strong>
-          <code>AuthNavGraph</code> handles login/sign-up, and a main <code>NavGraph</code> routes between workout screens. Navigation uses typed arguments (for example, passing a workout goal type into the goal-setting screen) instead of ad-hoc string extras, which keeps routing safer and easier to maintain.
+          Hilt provides the Room DAOs, <code>FirestoreRepository</code>, and <code>NetworkHelper</code>, so UI code never talks directly to Firebase or the database.
         </li>
       </ul>
     </li>
 
-    <li class="mb-2">
-      <strong class="fw-bold d-block">Reliability</strong>
-      <ul class="mb-0 ps-3">
+    <li>
+      <strong>Room as the single source of truth:</strong>
+      <ul class="mb-2 ps-3">
         <li>
-          <strong>Room-backed workout history:</strong>
-          All workouts and workout goals are stored in a Room database, and Compose screens always render from that local state, so logging and browsing history still work even if Firestore or the network is down.
+          An <code>AppDatabase</code> stores workouts, workout goals, and goal details as the canonical source of data.
         </li>
         <li>
-          <strong>Offline logging with deferred sync:</strong>
-          New workouts are inserted into Room first with <code>isSynced = false</code> and a <code>lastModified</code> timestamp. When connectivity is available, the ViewModel finds unsynced rows and pushes them to Firestore, then marks them as synced so users don’t lose workouts just because they were offline.
-        </li>
-        <li>
-          <strong>Network-aware cloud operations &amp; safe deletes:</strong>
-          A <code>NetworkHelper</code> checks connectivity before calling Firestore for saves, deletes, or initial syncs. Firestore deletes are best-effort, but the app always removes the workout from Room, so the UI never gets stuck waiting for the network to cooperate.
-        </li>
-        <li>
-          <strong>Timestamp-based conflict handling:</strong>
-          When the user logs in and a <code>userId</code> is set, the app pulls workouts from Firestore and compares each item’s <code>lastModified</code> with the local copy. Only newer cloud data overwrites Room, which prevents stale data from another device from clobbering recent local edits.
+          DAOs return <code>Flow</code> objects that feed into the ViewModels, and Compose observes those flows so the UI is always driven from the same local database state, online or offline.
         </li>
       </ul>
     </li>
 
-    <li class="mb-2">
-      <strong class="fw-bold d-block">What I focused on</strong>
-      <ul class="mb-0 ps-3">
+    <li>
+      <strong>Offline-first sync layer with Firestore:</strong>
+      <ul class="mb-2 ps-3">
         <li>
-          <strong>Offline-first workout logging:</strong>
-          Designing the app so adding and browsing workouts never depends on the network — Room is always the source of truth, and Firestore is treated as a sync/backup layer instead of the primary database.
+          Local changes are written to Room first and marked with <code>isSynced</code> and <code>lastModified</code> fields.
         </li>
         <li>
-          <strong>Clear data modeling for goals &amp; history:</strong>
-          Structuring entities and DAO queries for workouts and workout goals so calendar views and progress screens can be driven from the same underlying data, instead of hard-coded calculations in the UI.
-        </li>
-        <li>
-          <strong>Separation of concerns &amp; extensible code:</strong>
-          Keeping Compose screens thin by pushing logic into ViewModels and repositories, wiring them with <code>Flow</code>/<code>StateFlow</code>, and aiming for small, clearly named functions so it’s easy to extend the app later with new workout metrics or additional health features without a rewrite.
+          Sync functions in the ViewModels convert entities to DTOs and use a shared <code>FirestoreRepository</code> to push unsynced data and pull remote changes, resolving conflicts based on which side has the newer timestamp.
         </li>
       </ul>
     </li>
+
+    <li>
+      <strong>Composable navigation graphs for auth &amp; main app:</strong>
+      <ul class="mb-0 ps-3">
+        <li>
+          <code>AuthNavGraph</code> handles login/sign-up, and a main <code>NavGraph</code> routes between workout-related screens.
+        </li>
+        <li>
+          Navigation uses typed arguments (for example, passing a workout goal type into the goal-setting screen) instead of ad-hoc string extras, which keeps routing safer and easier to maintain.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="mb-2">
+  <strong class="fw-bold d-block">Reliability</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>Room-backed workout history:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          All workouts and workout goals are stored in a <code>Room</code> database and treated as the single source of truth.
+        </li>
+        <li>
+          Compose screens always render from that local state, so logging and browsing history still work even if Firestore or the network is down.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Offline logging with deferred sync:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          New workouts are inserted into Room first with <code>isSynced = false</code> and a <code>lastModified</code> timestamp.
+        </li>
+        <li>
+          When connectivity is available, the ViewModel finds unsynced rows, pushes them to Firestore, and marks them as synced so users don’t lose workouts just because they were offline.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Network-aware cloud operations &amp; safe deletes:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          A <code>NetworkHelper</code> checks connectivity before calling Firestore for saves, deletes, or initial syncs.
+        </li>
+        <li>
+          Firestore deletes are best-effort, but the app always removes the workout from Room, so the UI never gets stuck waiting for the network to cooperate.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Timestamp-based conflict handling:</strong>
+      <ul class="mb-0 ps-3">
+        <li>
+          When the user logs in and a <code>userId</code> is set, the app pulls workouts from Firestore and compares each item’s <code>lastModified</code> with the local copy.
+        </li>
+        <li>
+          Only newer cloud data overwrites Room, which prevents stale data from another device from clobbering recent local edits.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
+
+<li class="mb-2">
+  <strong class="fw-bold d-block">What I focused on</strong>
+  <ul class="mb-0 ps-3">
+    <li>
+      <strong>Offline-first workout logging:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          Designing the app so adding and browsing workouts never depends on the network.
+        </li>
+        <li>
+          <code>Room</code> is always the source of truth, and Firestore is treated as a sync/backup layer instead of the primary database.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Clear data modeling for goals &amp; history:</strong>
+      <ul class="mb-2 ps-3">
+        <li>
+          Structuring entities and DAO queries for workouts and workout goals in a way that supports calendar and progress views.
+        </li>
+        <li>
+          Driving UI summaries from the underlying data model instead of relying on hard-coded calculations in the UI layer.
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <strong>Separation of concerns &amp; extensible code:</strong>
+      <ul class="mb-0 ps-3">
+        <li>
+          Keeping Compose screens thin by pushing logic into ViewModels and repositories, wired with <code>Flow</code>/<code>StateFlow</code>.
+        </li>
+        <li>
+          Aiming for small, clearly named functions so it’s easy to extend the app later with new workout metrics or additional health features without a rewrite.
+        </li>
+      </ul>
+    </li>
+  </ul>
+</li>
   </ul>
 </div>
          </ul>
@@ -815,15 +1008,38 @@
   <ul class="mb-0 ps-3">
     <li>
       <strong>MVVM with Hilt-injected repository:</strong>
-      A single <code>CurrencyViewModel</code> holds the screen state as a <code>StateFlow&lt;CurrencyUiState&gt;</code>. It doesn’t talk to the network layer directly; instead it depends on a <code>CurrencyRepository</code> interface provided by Hilt so the UI stays decoupled from API details.
+      <ul class="mb-2 ps-3">
+        <li>
+          A single <code>CurrencyViewModel</code> holds the screen state as a <code>StateFlow&lt;CurrencyUiState&gt;</code>.
+        </li>
+        <li>
+          The ViewModel doesn’t talk to the network layer directly; it depends on a <code>CurrencyRepository</code> interface provided by Hilt so the UI stays decoupled from API details.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>Repository + Ktor API layer:</strong>
-      The repository implementation (<code>CurrencyRepositoryImpl</code>) delegates HTTP calls to a <code>CurrencyApiService</code> built on Ktor’s <code>HttpClient</code> with <code>ContentNegotiation</code> and <code>kotlinx.serialization</code>.
+      <ul class="mb-2 ps-3">
+        <li>
+          The repository implementation (<code>CurrencyRepositoryImpl</code>) delegates HTTP calls to a <code>CurrencyApiService</code>.
+        </li>
+        <li>
+          <code>CurrencyApiService</code> is built on Ktor’s <code>HttpClient</code> with <code>ContentNegotiation</code> and <code>kotlinx.serialization</code>, and maps responses into simple data classes before they reach the ViewModel.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>Test-friendly design with fakes:</strong>
-      Because the ViewModel depends on the <code>CurrencyRepository</code> interface, tests can swap in a <code>FakeCurrencyRepository</code> to simulate API results.
+      <ul class="mb-0 ps-3">
+        <li>
+          Because the ViewModel depends on the <code>CurrencyRepository</code> interface, tests can swap in a <code>FakeCurrencyRepository</code> to simulate API results.
+        </li>
+        <li>
+          This keeps the real Ktor client out of unit tests and makes it easy to exercise edge cases and error paths.
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
@@ -833,15 +1049,38 @@
   <ul class="mb-0 ps-3">
     <li>
       <strong>Graceful handling of API failures:</strong>
-      Network calls are wrapped in <code>try/catch</code> blocks inside the <code>CurrencyViewModel</code>, and any exceptions update the <code>error</code> field in <code>CurrencyUiState</code> instead of crashing the app.
+      <ul class="mb-2 ps-3">
+        <li>
+          Network calls are wrapped in <code>try/catch</code> blocks inside the <code>CurrencyViewModel</code>.
+        </li>
+        <li>
+          Any exceptions update the <code>error</code> field in <code>CurrencyUiState</code> instead of crashing the app, and the UI renders that message.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>Input validation &amp; safe parsing:</strong>
-      The ViewModel validates the input amount before converting and falls back to safe values (like <code>"0.00"</code>) or an error message when the user types invalid text, so unexpected input doesn’t lead to inconsistent state or broken UI.
+      <ul class="mb-2 ps-3">
+        <li>
+          The ViewModel validates the input amount before converting and rejects non-numeric text.
+        </li>
+        <li>
+          It falls back to safe values (like <code>"0.00"</code>) or an error message so unexpected input doesn’t lead to inconsistent state or a broken UI.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>Single source of truth for UI state:</strong>
-      All screen data (selected currencies, amount, result, and error) lives in a single <code>CurrencyUiState</code> exposed as a <code>StateFlow</code>.
+      <ul class="mb-0 ps-3">
+        <li>
+          All screen data (selected currencies, amount, result, and error) lives in a single <code>CurrencyUiState</code>.
+        </li>
+        <li>
+          That state is exposed as a <code>StateFlow</code> and consumed by Compose, which keeps the UI predictable and easy to reason about.
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
@@ -851,15 +1090,38 @@
   <ul class="mb-0 ps-3">
     <li>
       <strong>Practicing production patterns on a tiny feature:</strong>
-      Treating a simple currency conversion screen as a sandbox to practice MVVM, Hilt DI, a repository abstraction, and a clear separation between UI, state, and network code.
+      <ul class="mb-2 ps-3">
+        <li>
+          Treating a simple currency conversion screen as a sandbox to practice MVVM, Hilt DI, and a repository abstraction.
+        </li>
+        <li>
+          Keeping a clear separation between UI, state, and network code even though the feature itself is small.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>Designing for testability from the start:</strong>
-      Depending on a <code>CurrencyRepository</code> interface in the ViewModel and using a <code>FakeCurrencyRepository</code> in tests so core behavior (conversion logic, error handling, and initial currency list) can be verified without real network calls.
+      <ul class="mb-2 ps-3">
+        <li>
+          Depending on a <code>CurrencyRepository</code> interface in the ViewModel instead of a concrete API client.
+        </li>
+        <li>
+          Using a <code>FakeCurrencyRepository</code> in tests so conversion logic, error handling, and the initial currency list can be verified without real network calls.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>End-to-end automation with CI/CD:</strong>
-      Wiring up GitHub Actions workflows so each push runs the unit tests, and a separate pipeline builds a release APK and publishes it as a GitHub Release.
+      <ul class="mb-0 ps-3">
+        <li>
+          Wiring up GitHub Actions workflows so each push runs the unit tests as part of an <code>Android CI</code> job.
+        </li>
+        <li>
+          Adding a separate pipeline that builds a release APK and publishes it as a GitHub Release to mimic a small but realistic CD flow.
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
@@ -869,19 +1131,50 @@
   <ul class="mb-0 ps-3">
     <li>
       <strong>Unit tests for ViewModel logic:</strong>
-      Wrote unit tests for <code>CurrencyViewModel</code> using a <code>FakeCurrencyRepository</code> and Kotlin coroutine test utilities. The tests verify happy-path conversions, invalid input handling, error state updates, and that the initial currency list is loaded as expected.
+      <ul class="mb-2 ps-3">
+        <li>
+          Wrote unit tests for <code>CurrencyViewModel</code> using a <code>FakeCurrencyRepository</code> and Kotlin coroutine test utilities.
+        </li>
+        <li>
+          Tests cover happy-path conversions, invalid input handling, error state updates, and the initial currency list.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>Network-free, deterministic tests:</strong>
-      By depending on the <code>CurrencyRepository</code> interface instead of the real Ktor client, tests run quickly and reliably without hitting the actual API, which makes it easy to cover edge cases like invalid target currencies or exceptions.
+      <ul class="mb-2 ps-3">
+        <li>
+          By depending on the <code>CurrencyRepository</code> interface instead of the real Ktor client, tests run quickly and reliably without hitting the actual API.
+        </li>
+        <li>
+          This makes it easy to cover edge cases like invalid target currencies or thrown exceptions.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>Automated CI on each change:</strong>
-      An <code>Android CI</code> GitHub Actions workflow runs <code>./gradlew testDebugUnitTest</code> on every push and pull request to <code>master</code>, <code>develop</code>, and <code>feature/**</code> branches, so broken tests are caught before changes are merged.
+      <ul class="mb-2 ps-3">
+        <li>
+          An <code>Android CI</code> GitHub Actions workflow runs <code>./gradlew testDebugUnitTest</code> on every push and pull request to <code>master</code>, <code>develop</code>, and <code>feature/**</code> branches.
+        </li>
+        <li>
+          Broken tests are caught before changes are merged, which keeps the main branches stable.
+        </li>
+      </ul>
     </li>
+
     <li>
       <strong>Release pipeline via GitHub Actions:</strong>
-      A separate <code>Android CD</code> workflow builds a release APK with <code>./gradlew assembleRelease</code> and uploads it as a GitHub Release (tagged <code>latest</code>), giving me hands-on experience with a lightweight CI/CD pipeline for a small Android app.
+      <ul class="mb-0 ps-3">
+        <li>
+          A separate <code>Android CD</code> workflow builds a release APK with <code>./gradlew assembleRelease</code>.
+        </li>
+        <li>
+          The workflow uploads the APK as a GitHub Release (tagged <code>latest</code>), giving me hands-on experience with a lightweight CI/CD pipeline for a small Android app.
+        </li>
+      </ul>
     </li>
   </ul>
 </li>
